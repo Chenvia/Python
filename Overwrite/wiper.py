@@ -4,11 +4,11 @@ import string, random, os
 
 def fixedpass(fname, seq):
 
-    print "\n\tBefore"
+    print("\n\tBefore")
     fileobj = open(fname, 'rb+')
     fcontents = fileobj.read()
-    print dump(fcontents)
-    print "File Size: " + str(len(fcontents)) + " bytes\n"
+    print(dump(fcontents))
+    print("File Size: " + str(len(fcontents)) + " bytes\n")
     fileobj.close()
     flength = len(fcontents)
     
@@ -22,9 +22,9 @@ def fixedpass(fname, seq):
     newfile.truncate()
     newfile.write(dpass)
     newfile.close()
-    print "\n\tAfter"
-    print dump(open(fname,'rb+').read())
-    print "File Size: " + str(len(open(fname,'rb+').read())) + " bytes"
+    print("\n\tAfter")
+    print(dump(open(fname,'rb+').read()))
+    print("File Size: " + str(len(open(fname,'rb+').read())) + " bytes")
     return dpass
 
 def randpass(fname):
@@ -32,9 +32,9 @@ def randpass(fname):
     fileobj = open(fname, 'rb+')
     fcontents = fileobj.read()
     flength = len(fcontents)
-    print "\n\tBefore"
-    print dump(fcontents)
-    print "File Size: " + str(flength) + " bytes\n"
+    print("\n\tBefore")
+    print(dump(fcontents))
+    print("File Size: " + str(flength) + " bytes\n")
 
     dpass = ''.join( random.SystemRandom().choice(string.ascii_letters + string.digits + string.punctuation) for i in range(0,flength))
     
@@ -44,9 +44,9 @@ def randpass(fname):
 
     newfile.write(dpass)
     newfile.close()
-    print "\n\tAfter"
-    print dump(open(fname,'rb+').read())
-    print "File Size: " + str(len(open(fname,'rb+').read())) + " bytes"
+    print("\n\tAfter")
+    print(dump(open(fname,'rb+').read()))
+    print("File Size: " + str(len(open(fname,'rb+').read())) + " bytes")
     return dpass
 
 def verify(data,fname):
@@ -225,10 +225,7 @@ def Gutmann(fname):
         randpass(fname)
     os.delete(fname)
 
-    
-Gutmann('test.txt')
 
-    
+if __name__ == "__main__":
 
-
-
+    Gutmann('test.txt')
