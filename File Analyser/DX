@@ -1,0 +1,973 @@
+<style type="text/css">
+
+/* Leeds Beckett Typography */
+
+@font-face {
+    font-family: 'AvenyTRegular';
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_regular-webfont.eot');
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_regular-webfont.woff') format('woff'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_regular-webfont.ttf') format('truetype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_regular-webfont.svg#AvenyTRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenyTMedium';
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_medium-webfont.eot');
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_medium-webfont.woff') format('woff'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_medium-webfont.ttf') format('truetype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_medium-webfont.svg#AvenyTMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenyTBold';
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_bold-webfont.eot');
+    src: url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny/fonts/aveny-t_bold-webfont.woff') format('woff'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_bold-webfont.ttf') format('truetype'),
+         url('/bbcswebdav/institution/Login_Files/fonts/aveny-t_bold-webfont.svg#AvenyTBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lmuavenyreg {font-family:"AvenyTRegular", Arial, Helvetica, sans-serif;}
+.lmuavenymed {font-family:"AvenyTMedium", Arial, Helvetica, sans-serif;}
+.lmuavenybol {font-family:"AvenyTBold", Arial, Helvetica, sans-serif;}
+.lmuarial {font-family: Arial, Helvetica, sans-serif; font-weight: normal;}
+
+/* Blackboard CSS inlined (to be put in login.css) */
+
+/* Login header is the div at the top of the page, displayed absolutely and z-indexed to appear above the banner */
+
+#loginHeader {
+	position: absolute;
+	left: 704px !important;
+	top: 0px;
+	color: #fff;
+	height: 25px;
+	width: 320px;
+	z-index: 11;
+}
+
+#contrastTextSize{
+	position: absolute;
+	right: 0px;
+}
+
+#loginHeader ul li {
+    background: #8c76b0;
+    display: inline-block;
+	color: #fff;
+    margin: 0px;
+	position: relative;
+	padding: 8px;
+    border-top: 0;
+}
+
+#loginHeader ul li a {
+	text-align:center;
+    text-indent: 0px;
+	padding: 0px;
+    width: 130px;
+	}
+	
+#loginHeader ul li:first-child, #loginHeader ul li:first-child a{
+	-webkit-border-bottom-left-radius: 0px !important;
+}
+
+#loginHeader ul li:hover,
+#loginLang h2:hover,
+#loginLang:hover h2 {
+	text-decoration: underline;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+/* Text size and contrast buttons */ 
+
+#loginHeader ul li.font-size:before {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif !important;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 0px; 
+	cursor: pointer;
+}
+
+#loginHeader ul li.contrast:before {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif !important;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 0px;
+	cursor: pointer;
+}
+
+/* Font size and contrast joint CSS for standard view not hover or click */ 
+
+#loginHeader ul li.font-size a {
+    position: relative;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#loginHeader ul li.contrast a {
+    position: relative;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#loginHeader ul li:hover:before {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#loginHeader ul li.contrast {
+    border-left: 1px solid #fff;
+	cursor: pointer;
+}
+
+#loginBox { 
+	position: absolute;
+	color: #270758 !important;
+	text-align: center;
+	width: 369px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border: 1px;
+	border-color: #a8a4a3;
+	border-style: solid;
+	font-family: "AvenyTMedium";
+	font-size: 16px;
+	/*z-index: 1;*/
+	background-color: #fff;
+	text-decoration: none;
+}
+
+#loginError {
+    padding: 20px 10px 20px 10px;
+    /* padding: 15px 26px 10px 24px; */
+    z-index: 4;
+    position: absolute;
+    margin-top: -100px;
+}
+
+#loginBox ul {
+    margin: 0 auto;
+    width: 300px;
+}
+
+#loginBox li { padding: 0 0 12px }
+
+
+#loginBox li + li + li {
+    padding: 12px 0 0;
+	color: #000;
+    text-align: left;
+}
+
+
+#loginBox li + li + li + li {
+	position: absolute;
+	left: 0px; 
+    text-align: right;
+	margin-bottom: 10px;
+}
+
+/* Error message */
+
+.bad {
+	background-color: #ec008c !important; 	
+	text-align: left !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-weight: bold !important;
+}
+
+/* Login Box Label text - Username / Password */
+
+#loginBox li label,
+.portlet #loginBoxFull li label {
+	position: relative;
+	left: -11px;
+    color: #270758;
+    display: block;
+    font-size: 130%;
+   	letter-spacing: 0px !important; 
+    padding: 0 0 3px;
+    text-align: left;
+	text-transform: capitalize;
+    width: 100%;
+}
+
+.portlet #loginBoxFull li label {
+    font-weight: normal;
+    font-size: 90%;
+    padding: 0 0 2px;
+}
+
+#loginBox li input {
+    font-size: 140%;
+    padding: 10px;
+    width: 100%;
+}
+
+#loginBox input[type="text"],
+#loginBox input[type="password"] {
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    background: #efefef;
+    padding: 6px;
+    border: 4px solid #777;
+    color: #666;
+    font-weight: bold;
+    margin: 0 0 0 -10px;
+}
+
+#loginBox input[type="text"]:focus,
+#loginBox input[type="password"]:focus,
+#loginBox input[type="text"]:hover,
+#loginBox input[type="password"]:hover {
+    background: #fff;
+    border-color: #00add0;
+    color: #333;
+}
+
+#loginBox input:-webkit-autofill {
+    background: #336699!important;
+    color: #333!important;
+}
+
+
+/* Login box button */
+
+#loginBox li input[type="submit"] {
+	position: relative;
+	left: -10px;
+    font-size: 130%;
+	font-family: "AvenyTMedium" !important;
+	font-weight:normal !important; 
+    margin: 0 0 0 0;
+    width: 100px;
+	border-color: #2f3233; 
+	border-style: solid;
+	border-width: 2px;
+	background-color: #2f3233 !important;
+	text-align: left;
+		cursor: pointer;
+}
+
+#loginBox li input[type="submit"]:focus,
+#loginBox li input[type="submit"]:hover {
+	position: relative;
+	left: -10px;
+	color: #ffffff;
+    font-size: 130%;
+	font-weight:normal !important; 
+    margin: 0 0 0 0;
+    width: 100px;
+	border-color: #2f3233; 
+	border-style: solid;
+	border-width: 2px;
+	background-color: #2f3233 !important;
+	text-align: left;
+}
+
+#otherLinks{
+    display: block;
+    border-radius: 4px;
+    background-color: #18baab !important;
+    border: none;
+    position: absolute;
+    z-index: 1000;
+    padding: 10px 19px 10px 20px;
+    margin-top: -15px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "AvenyTRegular";
+    font-size: 20px;
+    top: 422px;
+    width: 156px;
+    margin-left: 87px;
+}
+
+#loginFormTitle,
+#loginFormText {
+    position: absolute;
+    display: none;
+	padding-top: 10px;
+}
+
+div.portlet #loginFormTitle, 
+div.portlet #loginFormText {
+    position: static;
+    display: block;
+}
+
+.forgot a { border-bottom: 1px dotted #0099B6 }
+.forgot a:hover { border-bottom-style: solid }
+
+#loginText {
+    padding: 12px 80px 18px 80px;
+    background: #5f6062;
+    border-top: 1px solid #777;
+    text-align: center;
+    display: none;
+}
+
+#loginText p span {
+    font-weight: bold;
+    font-size: 105%;
+    color: #fff;
+}
+
+#loginText p {
+    margin: 0;
+    font-size: 95%;
+    color: #ededed;
+}
+
+
+
+/*Hidden login page elements*/
+#loginHeader h1,
+#loginHeader h2,
+#loginHeader .productLogo { display: none }
+
+#loginOptions #gatewayButtonsTitle,
+#loginOptions #gatewayButtonsInstructions { display: none }
+
+
+
+/* Leeds Beckett CSS Portal 2014 */
+
+a{
+	color: #fbfbfb;
+	cursor: pointer;
+}
+
+a:link {
+	color: #fbfbfb;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #fbfbfb;
+}
+a:hover {
+	text-decoration: underline;
+	color: #fbfbfb;
+}
+a:active {
+	text-decoration: none;
+	color: #fbfbfb;
+} 
+
+#background {
+	width: 1600px;
+	height: 1138px;
+	z-index: -100;
+
+}
+
+#page {
+	width: 1024px;
+	color: #fff;
+	font-size: 16px;
+}
+
+#cookies {
+	position: absolute;
+	top: 0px;
+	left: 0px;	
+	height: 23px;
+	font-size: 20px;
+	width: 645px;
+	padding: 5px 5px 5px 50px;
+	background-color: #690039;
+	font-family: "AvenyTRegular";
+	z-index: 10;
+	border-width: 0px 1px 1px 0px !important;
+	border-color: #c40075;
+	border-style: solid;
+}
+
+#banner {
+	position: absolute;
+	top: 0px;
+	height: 90px;
+	width: 1024px;
+	background-color: #270858;
+	padding-top: 55px;
+	font-family: "AvenyTMedium";
+	font-size: 42px;
+	z-index: 1;
+}
+
+#bannerText {
+	position: absolute;
+	top: 75px;
+	left: 275px;
+	width: 400px;
+}
+
+#bannerRose {
+	background-image: url(https://my.leedsbeckett.ac.uk/bbcswebdav/institution/Login_Files/images/Rose.png);
+	background-repeat: no-repeat;
+	width: 227px;
+	height: 85px;
+	position: absolute;
+	top: 60px;
+	left: 43px;
+}
+
+#bannerUnderline {
+	position:absolute;
+	top: 145px;
+	left: 52px;
+	width: 972px;
+	height: 15px;
+	background-color: #8c76b0;
+}
+
+#main {
+	position:absolute;
+	top: 190px;
+	height:448px;
+	width: 968px;
+	background-color:#faf0ff !important;
+	padding:30px 30px 30px 26px;
+	color: #fff;
+	z-index: 0;
+}
+
+#helpboxStu {
+	position: absolute;
+	left: 425px;
+	color:#ffffff;
+	line-height: 1.3;
+	font-family: "AvenyTRegular";
+	z-index: 3;
+}
+
+#helpboxStf {
+	position:absolute;
+	left: 720px;
+	top:30px;
+	color:#ffffff;
+	line-height: 1.3;
+	font-family: "AvenyTRegular";
+}
+
+#stuloginhead {
+	height: 55px;
+	width: 255px;
+	background-color:#c40075;
+	margin-right:20px;
+	padding-left: 20px;
+	padding-top: 19px;
+	font-family: "AvenyTMedium";
+	font-size: 36px;
+}
+
+.stuloginheadLong {
+	position:relative;
+	left: -20px;
+	top: -95px;
+	height: 55px;
+	width: 555px;
+	background-color:#c40075;
+	margin-right:20px;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-family: "AvenyTMedium";
+	font-size: 36px;
+}
+
+#stuloginbox {
+	height: 125px;
+	width: 255px;
+	background-color:#690039;
+	margin-right:20px;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 20px;
+	z-index: 2;
+}
+
+#studentReveal {
+	position:absolute;
+	left: 425px;
+	top: 105px;
+	height: 357px;
+	width: 555px;
+	background-color:#690039;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-family: "AvenyTRegular";
+	font-size: 20px;
+	z-index: 1;
+}
+
+#studentRevealText {
+	position:relative;
+	top: -75px;	
+	line-height: 1.4;
+}
+
+#studentRevealText li span:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#stfloginhead {
+	height: 55px;
+	width: 255px;
+	background-color:#00b7e8;
+	padding-left: 20px;
+	padding-top: 19px;
+	font-family: "AvenyTMedium";
+	font-size: 36px;
+}
+
+#stfloginheadLong {
+	position:relative;
+	left: -20px;
+	top: -95px;
+	height: 55px;
+	width: 555px;
+	background-color:#00b7e8;
+	margin-right:20px;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-family: "AvenyTMedium";
+	font-size: 36px;
+}
+
+#stfloginbox {
+	height: 125px;
+	width: 255px;
+	background-color:#00405b;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 20px;
+}
+
+#staffReveal {
+	position:absolute;
+	left: 425px;
+	top: 105px;
+	height: 357px;
+	width: 555px;
+	background-color: #00405B;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-family: "AvenyTRegular";
+	font-size: 20px;
+	z-index: 3;
+}
+
+#staffRevealText {
+	position:relative;
+	top: -75px;	
+	line-height: 1.4;
+}
+
+#moreHelpText {
+	position: relative;
+	top: 30px;
+    right: -135px;
+}
+
+#stud-exp-btns a{
+	color: #690039;
+	text-decoration:none;
+}
+
+#stf-exp-btns a{
+	color: #00405b;
+	text-decoration:none;
+}
+
+.lessHelpText {
+	position: relative;
+	bottom: 69px;
+    right: -430px;
+}
+
+#lessHelpTextStf {
+    position: relative;
+    bottom: 69px;
+    right: -430px;
+}
+
+#dynamicContent {
+    position: absolute;
+    width: 275px;
+    height: 212px;
+    left: 425px;
+    top: 270px;
+    background-color: #1c4404;
+}	
+
+#moocbox{
+	position: absolute;
+    width: 275px;
+    height: 212px;
+    left: 720px;
+    top: 270px;
+    background-color: #552500;
+}
+
+#moocboxhead{
+	height: 55px;
+    width: 255px;
+    background-color: #f58220;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-top: 19px;
+    font-family: 'AvenyTMedium';
+    font-size: 36px;
+}
+
+#moocboxmain{
+	color: #fbfbfb;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: 'AvenyTRegular';
+}
+
+#loginToView {
+	position: absolute;
+	left: 15px;
+	top: 318px;
+	font-size: 17px;
+	color: #2f3233;
+}
+
+#studentnews{
+    height: 70px;
+    width: 1024px;
+    padding-top: 34px;
+    position: absolute;
+    top: 698px;
+    color: #ffffff;
+    font-family: 'AvenyTRegular';
+}
+
+#footer {
+	height: 70px;
+	width: 1024px;
+	padding-top: 34px;
+	position:absolute;
+	top: 698px;
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "AvenyTRegular";
+}
+
+#footerImages {
+	position: absolute;
+	height: 65px;
+	width: 80px; 
+	left: 25px;
+	top: 22px;
+
+}
+
+#footerColumn1 {
+	position:absolute;
+	width: 500px;
+	height: 70px;
+	left: 120px;
+	top: 22px;
+	font-size: 24px;
+}
+
+#disclaimer {
+	position: absolute;
+	width: 240px;
+	height: 46px;
+	left: 755px;
+	top: 45px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: right;
+}
+
+
+
+/* TD Additions for Password Reset */
+
+.stuloginbox__a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+#studentPasswordHelpReveal, #studentPasswordHelpReveal--2, #staffPasswordHelpReveal {
+	position:absolute;
+	left: 425px;
+	top: 105px;
+	height: 357px;
+	width: 575px;
+	background-color:#690039;
+	padding-top: 20px;
+	font-family: Arial, Helvetica, sans-serif; font-weight: normal;
+	font-size: 20px;
+	z-index: 1;
+}
+
+#studentPasswordHelpReveal .stuloginheadLong, #studentPasswordHelpReveal--2 .stuloginheadLong, #staffPasswordHelpReveal .stuloginheadLong {
+	left: 0;
+}
+
+
+.studentpasswordhelp__inner {
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	top: -75px;
+}
+
+
+.studentpasswordhelp__inner hr  {
+	height: 1px;
+	border: none;
+	background: #A23B77;
+	margin: 0 0 1em;
+}
+
+.studentpasswordhelp__prompt {
+	font-size: 0.8em;
+	padding-bottom: 1em;
+}
+
+.studentpasswordhelp__prompt a{
+	text-decoration: underline;
+}
+
+
+#studentpasswordhelp__select {
+	margin: 0.5em 0 1.2em;
+	font-size: 0.9em;
+	border: 2px solid #360C2A;
+	border-radius: 4px;
+	height: 46px;
+	color: #333;
+	width: 300px;
+}
+
+
+
+#studentpasswordhelp__next1 {
+	display: block;
+	width: 100px;
+	text-align: left;
+	padding-left: 1em;
+	font-size: 1.2em;
+	
+}
+
+h4 {
+	font-weight: normal;
+}
+
+
+
+
+
+.button-myb--pink {
+
+	background: #c40075;
+	border-radius: 4px;
+	text-align: center;
+	padding: 0.3em 0.6em;
+
+}
+
+.button-myb--pink:hover {
+	background: #E54DA8;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.button-myb--avenyreg {
+	font-family:"AvenyTMedium", Arial, Helvetica, sans-serif;
+}
+
+.security-question-answers .button-myb--pink {
+	width: 70%;
+	display: block;
+	margin: 0.8em 0 0;
+	padding: 0.5em 0;
+	font-family:"AvenyTRegular", Arial, Helvetica, sans-serif;
+}
+
+.studentpasswordhelp__backbtn {
+	position: absolute;
+	bottom: 1em;
+	left: 29px;
+	font-family:"AvenyTRegular", Arial, Helvetica, sans-serif;
+	font-size: 0.95em;
+	border-color: #dacae3;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: #dacae3;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 10px 4px 10px;
+	color: #690039;
+	text-decoration:none;
+}
+
+.studentpasswordhelp__backbtn:hover {
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.studentpasswordhelp__morehelp {
+	position: absolute;
+	bottom: 1em;
+	right: 29px;
+	font-family: "AvenyTRegular", Arial, Helvetica, sans-serif;
+	font-size: 0.95em;
+	border-color: #dacae3;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: #dacae3;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 10px 4px 10px;
+	color: #690039;
+	text-decoration:none;
+}
+
+.security-question-answers {
+	margin-bottom: 1em;
+}
+
+.studentpasswordhelp__morehelp:hover {
+	cursor: pointer;
+}
+
+.loginBox__fyp {
+	position: relative;
+	text-align: right;
+	top: -18px;
+	float: right;
+	padding-right: 40px;
+	color: #270758;
+	font-family: "AvenyTRegular", Arial, Helvetica, sans-serif;
+}
+
+.loginBox__fyp:hover {
+	color: #270758;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* SSO Styling April 2016 - AAW */
+
+#ssoLoginLink{
+	text-decoration:none;
+	position: relative;
+	font-family: "AvenyTMedium" !important;
+	font-weight: normal !important;
+	margin: 0 0 0 0;
+	width: 250px;
+	border-style: solid;
+	border-radius:4px!important;
+	background-color: #00b7e8 !important;
+	text-align: left;
+	cursor: pointer;
+	border-radius:3px;
+	padding: 15px 70px 15px 70px;
+	top: 45px;
+	font-size: 30px;
+	box-shadow: 0px 0px 10px #b7b3b3;
+}
+
+#ssoReason{ 
+color:#222222!important;
+font-weight:normal;
+font-size:20px;
+}
+
+#justPwdReset{
+
+color:#222222; // was pink #c40075;
+position: absolute;
+left: 35px;
+width:335px;
+padding-top: 15px;
+padding-left: 15px;
+text-align: left;
+z-index: 1;
+/*z-index:1002;*/
+font-family: "AvenyTMedium";
+font-size: 20px;
+/*background-color:#ffffff;*/
+padding:10px;
+top:150px;
+text-align: center;
+
+}
+
+#justPwdReset a{
+
+color:#222222;
+/*font-weight:bold;*/
+
+}
+
+#loginBox{
+/*EXTRAS*/
+height: 56%;
+}
+
+#loginBox li input[type="submit"]{
+/*EXTRAS*/
+margin-left: 5px;
+}
+
+#loginBox li input[type="submit"]:focus, #loginBox li input[type="submit"]:hover{
+/*EXTRAS*/
+margin-left: 5px;
+}
+
+//SSO Extra SAML Styles - AW 2016
+
+#loginErrorMessage{ 
+    box-shadow: 0px 0px 10px #b7b3b3 !important;
+    padding: 20px 9px 20px 9px !important;
+	}
+	
+#loginRedirectProviders h3:first-child{ 
+	display:none; 
+}
+	
+#loginRedirectProviders {
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    color: #333333;
+    left: 0px;
+    top: 0px;
+    height: 265px;
+    width: 365px;
+    z-index: 1;
+	//top:330px;
+}
+
+</style>
