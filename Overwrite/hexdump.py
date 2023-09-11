@@ -11,8 +11,9 @@ def dump(src, length=8):
        N+=length
     return result
 
-exehandle = open("C:\\Users\\User\\Desktop\\Documents\\Python\\Resources\\Veil Evasion\\tools\\hyperion\\Term.exe",'rb+')
-exedata = exehandle.read()
+if __name__ == "__main__"
 
-print exedata
-#print dump(exedata)
+    exehandle = open("Test.exe",'rb+')
+    exedata = exehandle.read()
+
+    print (dump(exedata))
